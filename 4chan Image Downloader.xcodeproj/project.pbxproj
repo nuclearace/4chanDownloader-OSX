@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		74BA8D3C1A1793D000B727E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BA8D3B1A1793D000B727E0 /* AppDelegate.swift */; };
-		74BA8D3E1A1793D000B727E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BA8D3D1A1793D000B727E0 /* ViewController.swift */; };
+		74BA8D3E1A1793D000B727E0 /* ThreadDownloaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BA8D3D1A1793D000B727E0 /* ThreadDownloaderController.swift */; };
 		74BA8D401A1793D000B727E0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74BA8D3F1A1793D000B727E0 /* Images.xcassets */; };
 		74BA8D431A1793D000B727E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74BA8D411A1793D000B727E0 /* Main.storyboard */; };
 		74BA8D4F1A1793D000B727E0 /* _chan_Image_DownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BA8D4E1A1793D000B727E0 /* _chan_Image_DownloaderTests.swift */; };
+		74BA8D5B1A179ABE00B727E0 /* ChanDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BA8D5A1A179ABE00B727E0 /* ChanDownloader.swift */; };
+		74BA8D5D1A179DCA00B727E0 /* SwiftRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BA8D5C1A179DCA00B727E0 /* SwiftRegex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,12 +30,14 @@
 		74BA8D361A1793D000B727E0 /* 4chan Image Downloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "4chan Image Downloader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74BA8D3A1A1793D000B727E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74BA8D3B1A1793D000B727E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		74BA8D3D1A1793D000B727E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		74BA8D3D1A1793D000B727E0 /* ThreadDownloaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadDownloaderController.swift; sourceTree = "<group>"; };
 		74BA8D3F1A1793D000B727E0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		74BA8D421A1793D000B727E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74BA8D481A1793D000B727E0 /* 4chan Image DownloaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "4chan Image DownloaderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74BA8D4D1A1793D000B727E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74BA8D4E1A1793D000B727E0 /* _chan_Image_DownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _chan_Image_DownloaderTests.swift; sourceTree = "<group>"; };
+		74BA8D5A1A179ABE00B727E0 /* ChanDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChanDownloader.swift; sourceTree = "<group>"; };
+		74BA8D5C1A179DCA00B727E0 /* SwiftRegex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRegex.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +80,9 @@
 			isa = PBXGroup;
 			children = (
 				74BA8D3B1A1793D000B727E0 /* AppDelegate.swift */,
-				74BA8D3D1A1793D000B727E0 /* ViewController.swift */,
+				74BA8D5A1A179ABE00B727E0 /* ChanDownloader.swift */,
+				74BA8D3D1A1793D000B727E0 /* ThreadDownloaderController.swift */,
+				74BA8D5C1A179DCA00B727E0 /* SwiftRegex.swift */,
 				74BA8D3F1A1793D000B727E0 /* Images.xcassets */,
 				74BA8D411A1793D000B727E0 /* Main.storyboard */,
 				74BA8D391A1793D000B727E0 /* Supporting Files */,
@@ -208,8 +214,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74BA8D3E1A1793D000B727E0 /* ViewController.swift in Sources */,
+				74BA8D3E1A1793D000B727E0 /* ThreadDownloaderController.swift in Sources */,
 				74BA8D3C1A1793D000B727E0 /* AppDelegate.swift in Sources */,
+				74BA8D5D1A179DCA00B727E0 /* SwiftRegex.swift in Sources */,
+				74BA8D5B1A179ABE00B727E0 /* ChanDownloader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +405,7 @@
 				74BA8D541A1793D000B727E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		74BA8D551A1793D000B727E0 /* Build configuration list for PBXNativeTarget "4chan Image DownloaderTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +414,7 @@
 				74BA8D571A1793D000B727E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
