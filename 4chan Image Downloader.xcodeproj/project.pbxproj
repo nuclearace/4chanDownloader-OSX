@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		74BA8D3C1A1793D000B727E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BA8D3B1A1793D000B727E0 /* AppDelegate.swift */; };
+		74BA8D3E1A1793D000B727E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BA8D3D1A1793D000B727E0 /* ViewController.swift */; };
+		74BA8D401A1793D000B727E0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74BA8D3F1A1793D000B727E0 /* Images.xcassets */; };
+		74BA8D431A1793D000B727E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74BA8D411A1793D000B727E0 /* Main.storyboard */; };
+		74BA8D4F1A1793D000B727E0 /* _chan_Image_DownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BA8D4E1A1793D000B727E0 /* _chan_Image_DownloaderTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		74BA8D491A1793D000B727E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74BA8D2E1A1793D000B727E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74BA8D351A1793D000B727E0;
+			remoteInfo = "4chan Image Downloader";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		74BA8D361A1793D000B727E0 /* 4chan Image Downloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "4chan Image Downloader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74BA8D3A1A1793D000B727E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74BA8D3B1A1793D000B727E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		74BA8D3D1A1793D000B727E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		74BA8D3F1A1793D000B727E0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		74BA8D421A1793D000B727E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		74BA8D481A1793D000B727E0 /* 4chan Image DownloaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "4chan Image DownloaderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74BA8D4D1A1793D000B727E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74BA8D4E1A1793D000B727E0 /* _chan_Image_DownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _chan_Image_DownloaderTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		74BA8D331A1793D000B727E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74BA8D451A1793D000B727E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		74BA8D2D1A1793D000B727E0 = {
+			isa = PBXGroup;
+			children = (
+				74BA8D381A1793D000B727E0 /* 4chan Image Downloader */,
+				74BA8D4B1A1793D000B727E0 /* 4chan Image DownloaderTests */,
+				74BA8D371A1793D000B727E0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		74BA8D371A1793D000B727E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				74BA8D361A1793D000B727E0 /* 4chan Image Downloader.app */,
+				74BA8D481A1793D000B727E0 /* 4chan Image DownloaderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		74BA8D381A1793D000B727E0 /* 4chan Image Downloader */ = {
+			isa = PBXGroup;
+			children = (
+				74BA8D3B1A1793D000B727E0 /* AppDelegate.swift */,
+				74BA8D3D1A1793D000B727E0 /* ViewController.swift */,
+				74BA8D3F1A1793D000B727E0 /* Images.xcassets */,
+				74BA8D411A1793D000B727E0 /* Main.storyboard */,
+				74BA8D391A1793D000B727E0 /* Supporting Files */,
+			);
+			path = "4chan Image Downloader";
+			sourceTree = "<group>";
+		};
+		74BA8D391A1793D000B727E0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				74BA8D3A1A1793D000B727E0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		74BA8D4B1A1793D000B727E0 /* 4chan Image DownloaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				74BA8D4E1A1793D000B727E0 /* _chan_Image_DownloaderTests.swift */,
+				74BA8D4C1A1793D000B727E0 /* Supporting Files */,
+			);
+			path = "4chan Image DownloaderTests";
+			sourceTree = "<group>";
+		};
+		74BA8D4C1A1793D000B727E0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				74BA8D4D1A1793D000B727E0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		74BA8D351A1793D000B727E0 /* 4chan Image Downloader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74BA8D521A1793D000B727E0 /* Build configuration list for PBXNativeTarget "4chan Image Downloader" */;
+			buildPhases = (
+				74BA8D321A1793D000B727E0 /* Sources */,
+				74BA8D331A1793D000B727E0 /* Frameworks */,
+				74BA8D341A1793D000B727E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "4chan Image Downloader";
+			productName = "4chan Image Downloader";
+			productReference = 74BA8D361A1793D000B727E0 /* 4chan Image Downloader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		74BA8D471A1793D000B727E0 /* 4chan Image DownloaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74BA8D551A1793D000B727E0 /* Build configuration list for PBXNativeTarget "4chan Image DownloaderTests" */;
+			buildPhases = (
+				74BA8D441A1793D000B727E0 /* Sources */,
+				74BA8D451A1793D000B727E0 /* Frameworks */,
+				74BA8D461A1793D000B727E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				74BA8D4A1A1793D000B727E0 /* PBXTargetDependency */,
+			);
+			name = "4chan Image DownloaderTests";
+			productName = "4chan Image DownloaderTests";
+			productReference = 74BA8D481A1793D000B727E0 /* 4chan Image DownloaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		74BA8D2E1A1793D000B727E0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Erik Little";
+				TargetAttributes = {
+					74BA8D351A1793D000B727E0 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					74BA8D471A1793D000B727E0 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 74BA8D351A1793D000B727E0;
+					};
+				};
+			};
+			buildConfigurationList = 74BA8D311A1793D000B727E0 /* Build configuration list for PBXProject "4chan Image Downloader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 74BA8D2D1A1793D000B727E0;
+			productRefGroup = 74BA8D371A1793D000B727E0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				74BA8D351A1793D000B727E0 /* 4chan Image Downloader */,
+				74BA8D471A1793D000B727E0 /* 4chan Image DownloaderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		74BA8D341A1793D000B727E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74BA8D401A1793D000B727E0 /* Images.xcassets in Resources */,
+				74BA8D431A1793D000B727E0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74BA8D461A1793D000B727E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		74BA8D321A1793D000B727E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74BA8D3E1A1793D000B727E0 /* ViewController.swift in Sources */,
+				74BA8D3C1A1793D000B727E0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74BA8D441A1793D000B727E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74BA8D4F1A1793D000B727E0 /* _chan_Image_DownloaderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		74BA8D4A1A1793D000B727E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 74BA8D351A1793D000B727E0 /* 4chan Image Downloader */;
+			targetProxy = 74BA8D491A1793D000B727E0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		74BA8D411A1793D000B727E0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74BA8D421A1793D000B727E0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		74BA8D501A1793D000B727E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		74BA8D511A1793D000B727E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		74BA8D531A1793D000B727E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "4chan Image Downloader/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		74BA8D541A1793D000B727E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "4chan Image Downloader/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		74BA8D561A1793D000B727E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "4chan Image DownloaderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/4chan Image Downloader.app/Contents/MacOS/4chan Image Downloader";
+			};
+			name = Debug;
+		};
+		74BA8D571A1793D000B727E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "4chan Image DownloaderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/4chan Image Downloader.app/Contents/MacOS/4chan Image Downloader";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		74BA8D311A1793D000B727E0 /* Build configuration list for PBXProject "4chan Image Downloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74BA8D501A1793D000B727E0 /* Debug */,
+				74BA8D511A1793D000B727E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74BA8D521A1793D000B727E0 /* Build configuration list for PBXNativeTarget "4chan Image Downloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74BA8D531A1793D000B727E0 /* Debug */,
+				74BA8D541A1793D000B727E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		74BA8D551A1793D000B727E0 /* Build configuration list for PBXNativeTarget "4chan Image DownloaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74BA8D561A1793D000B727E0 /* Debug */,
+				74BA8D571A1793D000B727E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 74BA8D2E1A1793D000B727E0 /* Project object */;
+}
