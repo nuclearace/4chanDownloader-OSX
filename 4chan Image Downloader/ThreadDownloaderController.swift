@@ -58,7 +58,6 @@ class ThreadDownloaderController: NSViewController  {
     }
     
     func handleDone(not:NSNotification) {
-        println("handling done")
         dispatch_async(dispatch_get_main_queue()) {[unowned self] in
             self.downloader = nil
         }

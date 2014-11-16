@@ -39,7 +39,7 @@ class ChanDownloader: NSObject {
         self.getNum++
     }
     
-    func getImages() {
+    private func getImages() {
         println("Getting thread images")
         self.numPosts = 0
         
@@ -63,11 +63,9 @@ class ChanDownloader: NSObject {
                     self.manager.createFileAtPath(self.downloadPath.path! + "/" + tim + ext,
                         contents: data, attributes: nil)
                     if (lastImage) {
-                        self.downloadView.appendTextAndScroll("DONE")
-                        NSNotificationCenter.defaultCenter().postNotificationName("done", object: nil)
+                        self.downloadView.appendTextAndScroll("DONE\n")
                         return
                     }
-                    
                 }
             }
             return getImage
