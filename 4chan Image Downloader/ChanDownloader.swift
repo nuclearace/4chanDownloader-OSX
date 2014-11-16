@@ -16,6 +16,7 @@ class ChanDownloader: NSObject {
     var downloadPath:NSURL!
     var downloadTimer:NSTimer!
     var getNum = 0
+    var gotNum = 0
     var numPosts = 0
     var pendingRequests = Array<() -> Void>()
     var posts:NSArray!
@@ -23,7 +24,6 @@ class ChanDownloader: NSObject {
     
     init(thread:String, downloadPath:NSURL, downloadView:ThreadDownloaderController) {
         super.init()
-        println("Should init with thread: \(thread)")
         self.downloadView = downloadView
         self.thread = thread
         self.downloadPath = downloadPath
@@ -32,6 +32,13 @@ class ChanDownloader: NSObject {
     
     deinit {
         println("Downloader is being released")
+    }
+    
+    private func checkDone() -> Bool {
+        if (self.gotNum == self.numPosts) {
+            return true
+        }
+        return false
     }
     
     func executeGet() {
@@ -51,20 +58,20 @@ class ChanDownloader: NSObject {
                 self.downloadView.appendTextAndScroll("GET: " + tim + ext + "\n")
                 if (num == self.numPosts) {
                     lastImage = true
+                    self.getNum = 0
                     println("Invalidating timer")
                     self.downloadTimer.invalidate()
-                    self.getNum = 0
                     self.pendingRequests.removeAll(keepCapacity: false)
                 }
                 let imageURL = NSString(format: "https://i.4cdn.org/%@/%@%@", self.board, tim, ext)
                 let req = NSURLRequest(URL: NSURL(string: imageURL)!)
                 NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue()) {[unowned self] res, data, err in
+                    self.gotNum++
                     self.downloadView.appendTextAndScroll("GOT: " + tim + ext + "\n")
                     self.manager.createFileAtPath(self.downloadPath.path! + "/" + tim + ext,
                         contents: data, attributes: nil)
-                    if (lastImage) {
+                    if (self.checkDone()) {
                         self.downloadView.appendTextAndScroll("DONE\n")
-                        return
                     }
                 }
             }
@@ -91,10 +98,11 @@ class ChanDownloader: NSObject {
         let newPath = "file:///" + self.downloadPath.path! + "/4chanDownloads/"
             + self.board + "/" + self.threadNumber
         self.downloadPath = NSURL(string: newPath)
-        println(self.downloadPath)
         var err:NSError?
-        manager.createDirectoryAtURL(self.downloadPath, withIntermediateDirectories: true,
+        
+        self.manager.createDirectoryAtURL(self.downloadPath, withIntermediateDirectories: true,
             attributes: nil, error: &err)
+        
         if (err != nil) {
             println(err?.localizedDescription)
             return

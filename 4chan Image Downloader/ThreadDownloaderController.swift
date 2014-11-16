@@ -15,7 +15,6 @@ class ThreadDownloaderController: NSViewController  {
     @IBOutlet var downloadTextView: NSTextView!
     
     var downloader:ChanDownloader!
-    var posts = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
