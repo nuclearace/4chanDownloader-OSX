@@ -38,7 +38,7 @@ class ThreadDownloaderController: NSViewController  {
         openPanel.canChooseDirectories = true
         openPanel.canChooseFiles = false
         openPanel.allowsMultipleSelection = false
-        var clicked = openPanel.runModal()
+        let clicked = openPanel.runModal()
         
         if (clicked == NSFileHandlingPanelOKButton) {
             self.appendTextAndScroll("Starting Download\n")
@@ -50,7 +50,7 @@ class ThreadDownloaderController: NSViewController  {
     
     func appendTextAndScroll(text:String) {
         dispatch_async(dispatch_get_main_queue()) {[unowned self] in
-            var string = NSAttributedString(string: text)
+            let string = NSAttributedString(string: text)
             self.downloadTextView.textStorage?.appendAttributedString(string)
             self.downloadTextView.scrollRangeToVisible(NSMakeRange(countElements(self.downloadTextView.string!), 0))
         }

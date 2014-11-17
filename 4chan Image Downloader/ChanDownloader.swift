@@ -12,13 +12,12 @@ class ChanDownloader: NSObject {
     weak var downloadView:ThreadDownloaderController!
     let thread:String!
     let manager = NSFileManager()
+    let limiter = RateLimiter(tokensPerInterval: 1, interval: "second")
     var board:String!
     var downloadPath:NSURL!
-    var downloadTimer:NSTimer!
     var getNum = 0
     var gotNum = 0
     var numPosts = 0
-    var pendingRequests = Array<() -> Void>()
     var posts:NSArray!
     var threadNumber:String!
     
@@ -27,7 +26,7 @@ class ChanDownloader: NSObject {
         self.downloadView = downloadView
         self.thread = thread
         self.downloadPath = downloadPath
-        self.retrieveThreadJSON()
+        self.limiter.removeTokens(count: 1, callback: self.retrieveThreadJSON)
     }
     
     deinit {
@@ -41,27 +40,19 @@ class ChanDownloader: NSObject {
         return false
     }
     
-    func executeGet() {
-        self.pendingRequests[self.getNum]()
-        self.getNum++
-    }
-    
     private func getImages() {
         println("Getting thread images")
         self.numPosts = 0
         
         // Creates a function that can be called to download the image
-        func createFun(filename:String, ext:String, tim:String, num:Int) -> () -> Void  {
+        func createFun(filename:String, ext:String, tim:String, num:Int) -> (String?, Double?) -> Void  {
             // The download function
-            func getImage() {
+            func getImage(err:String?, tokensRemaining:Double?) {
                 var lastImage = false
                 self.downloadView.appendTextAndScroll("GET: " + tim + ext + "\n")
                 if (num == self.numPosts) {
                     lastImage = true
                     self.getNum = 0
-                    println("Invalidating timer")
-                    self.downloadTimer.invalidate()
-                    self.pendingRequests.removeAll(keepCapacity: false)
                 }
                 let imageURL = NSString(format: "https://i.4cdn.org/%@/%@%@", self.board, tim, ext)
                 let req = NSURLRequest(URL: NSURL(string: imageURL)!)
@@ -83,16 +74,17 @@ class ChanDownloader: NSObject {
                 let ext = posts[i]["ext"] as String
                 let tim = String(posts[i]["tim"] as Int)
                 let fun = createFun(filename, ext, tim, self.numPosts + 1)
-                self.pendingRequests.append(fun)
+                limiter.removeTokens(count: 1, callback: fun)
                 self.numPosts++
             }
         }
-        self.startTimer()
     }
     
-    private func retrieveThreadJSON() {
+    private func retrieveThreadJSON(err:String?, remainingTokens:Double?) {
         if (!self.verifyTheadURL()) {
             NSNotificationCenter.defaultCenter().postNotificationName("invalidThread", object: nil)
+            return
+        } else if (err != nil) {
             return
         }
         let newPath = "file:///" + self.downloadPath.path! + "/4chanDownloads/"
@@ -116,14 +108,8 @@ class ChanDownloader: NSObject {
             if let posts = realJSON["posts"] as? NSArray {
                 self.posts = posts
                 self.getImages()
+                
             }
-        }
-    }
-    
-    private func startTimer() {
-        dispatch_async(dispatch_get_main_queue()) {[unowned self] in
-            self.downloadTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self,
-                selector: Selector("executeGet"), userInfo: nil, repeats: true)
         }
     }
     
