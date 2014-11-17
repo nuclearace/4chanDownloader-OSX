@@ -87,8 +87,7 @@ class ChanDownloader: NSObject {
         } else if (err != nil) {
             return
         }
-        let newPath = "file:///" + self.downloadPath.path! + "/4chanDownloads/"
-            + self.board + "/" + self.threadNumber
+        let newPath = "file:///" + self.downloadPath.path! + "/" + self.board + "/" + self.threadNumber
         self.downloadPath = NSURL(string: newPath)
         var err:NSError?
         
