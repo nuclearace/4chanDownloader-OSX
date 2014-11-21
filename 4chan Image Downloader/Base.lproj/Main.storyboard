@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
     </dependencies>
@@ -375,7 +375,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v49-0T-j2m">
-                                <rect key="frame" x="7" y="11" width="503" height="22"/>
+                                <rect key="frame" x="7" y="11" width="351" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="FmT-oc-VXf">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -420,22 +420,35 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iSh-5m-dVv">
+                                <rect key="frame" x="360" y="5" width="152" height="32"/>
+                                <buttonCell key="cell" type="push" title="Download Folder" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Vky-pQ-wsJ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="downloadFolderWasClicked:" target="XfG-lQ-9wD" id="5c1-Wd-tLC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="v49-0T-j2m" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="7" id="IVG-QD-jfR"/>
+                            <constraint firstAttribute="bottom" secondItem="iSh-5m-dVv" secondAttribute="bottom" constant="12" id="1C3-ka-SG8"/>
+                            <constraint firstAttribute="bottom" secondItem="v49-0T-j2m" secondAttribute="bottom" constant="11" id="9Fz-La-rIP"/>
                             <constraint firstAttribute="trailing" secondItem="uXu-H0-8Mv" secondAttribute="trailing" constant="12" id="Ks0-fH-onL"/>
                             <constraint firstItem="uXu-H0-8Mv" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="8" id="Qev-HX-O2E"/>
-                            <constraint firstItem="5i5-PK-tk2" firstAttribute="leading" secondItem="v49-0T-j2m" secondAttribute="trailing" constant="8" id="e8t-iN-rb4"/>
-                            <constraint firstItem="5i5-PK-tk2" firstAttribute="leading" secondItem="v49-0T-j2m" secondAttribute="trailing" constant="8" id="epw-u5-72u"/>
+                            <constraint firstItem="5i5-PK-tk2" firstAttribute="leading" secondItem="iSh-5m-dVv" secondAttribute="trailing" constant="12" id="VY1-6N-QuL"/>
+                            <constraint firstItem="v49-0T-j2m" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="7" id="d6V-v5-ZhB"/>
                             <constraint firstItem="uXu-H0-8Mv" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="7" id="gPs-Pd-CY2"/>
                             <constraint firstAttribute="trailing" secondItem="5i5-PK-tk2" secondAttribute="trailing" constant="12" id="hCB-tI-KJg"/>
+                            <constraint firstItem="iSh-5m-dVv" firstAttribute="top" secondItem="uXu-H0-8Mv" secondAttribute="bottom" constant="8" id="m22-6i-1wK"/>
                             <constraint firstItem="5i5-PK-tk2" firstAttribute="top" secondItem="uXu-H0-8Mv" secondAttribute="bottom" constant="8" id="nPO-Aj-gRC"/>
-                            <constraint firstAttribute="bottom" secondItem="v49-0T-j2m" secondAttribute="bottom" constant="11" id="pGP-OU-ypY"/>
+                            <constraint firstItem="iSh-5m-dVv" firstAttribute="leading" secondItem="v49-0T-j2m" secondAttribute="trailing" constant="8" id="nvq-bJ-vIY"/>
+                            <constraint firstItem="v49-0T-j2m" firstAttribute="top" secondItem="uXu-H0-8Mv" secondAttribute="bottom" constant="8" id="uhd-GO-PFR"/>
+                            <constraint firstItem="iSh-5m-dVv" firstAttribute="leading" secondItem="v49-0T-j2m" secondAttribute="trailing" constant="8" id="w8z-Vw-9Gz"/>
                             <constraint firstAttribute="bottom" secondItem="5i5-PK-tk2" secondAttribute="bottom" constant="12" id="zLM-A7-YvU"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="downloadButton" destination="5i5-PK-tk2" id="FWe-pd-YJH"/>
                         <outlet property="downloadTextView" destination="zqT-lQ-51S" id="Muj-0E-93s"/>
                         <outlet property="threadTextField" destination="v49-0T-j2m" id="fsc-WS-BQN"/>
                     </connections>

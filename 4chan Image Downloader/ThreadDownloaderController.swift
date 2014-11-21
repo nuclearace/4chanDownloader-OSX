@@ -10,19 +10,13 @@ import Cocoa
 
 class ThreadDownloaderController: NSViewController  {
     
-    @IBOutlet weak var downloadButton:NSButton!
     @IBOutlet weak var threadTextField:NSTextField!
-    @IBOutlet var downloadTextView: NSTextView!
-    
+    @IBOutlet var downloadTextView:NSTextView!
     var downloader:ChanDownloader!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleDone:", name: "done", object: nil)
-    }
-    
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        self.downloader = ChanDownloader(downloadView: self)
     }
     
     override var representedObject:AnyObject? {
@@ -34,6 +28,13 @@ class ThreadDownloaderController: NSViewController  {
     @IBAction func downloadWasClicked(sender:AnyObject) {
         self.downloadTextView.string = ""
         let thread = threadTextField.stringValue
+        
+        self.appendTextAndScroll("Starting Download\n")
+        self.downloader.setThreadAndBeginDownload(thread)
+        self.threadTextField.setValue("", forKey: "stringValue")
+    }
+    
+    @IBAction func downloadFolderWasClicked(sender:AnyObject) {
         let openPanel = NSOpenPanel()
         openPanel.canChooseDirectories = true
         openPanel.canChooseFiles = false
@@ -41,10 +42,7 @@ class ThreadDownloaderController: NSViewController  {
         let clicked = openPanel.runModal()
         
         if (clicked == NSFileHandlingPanelOKButton) {
-            self.appendTextAndScroll("Starting Download\n")
-            self.downloader = ChanDownloader(thread: thread,
-                downloadPath: openPanel.URL!, downloadView: self)
-            self.threadTextField.setValue("", forKey: "stringValue")
+            self.downloader.changeDownloadFolder(openPanel.URL!)
         }
     }
     
@@ -53,12 +51,6 @@ class ThreadDownloaderController: NSViewController  {
             let string = NSAttributedString(string: text)
             self.downloadTextView.textStorage?.appendAttributedString(string)
             self.downloadTextView.scrollRangeToVisible(NSMakeRange(countElements(self.downloadTextView.string!), 0))
-        }
-    }
-    
-    func handleDone(not:NSNotification) {
-        dispatch_async(dispatch_get_main_queue()) {[unowned self] in
-            self.downloader = nil
         }
     }
 }
