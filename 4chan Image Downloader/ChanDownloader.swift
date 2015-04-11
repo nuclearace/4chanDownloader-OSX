@@ -102,7 +102,7 @@ class ChanDownloader: NSObject {
         
         // Creates a function that can be called to download the image
         func createFun(filename:String, ext:String, tim:String, num:Int) {
-            if (self.manager.fileExistsAtPath(self.threadDownloadPath.path! + "/" + tim + ext)) {
+            if self.manager.fileExistsAtPath(self.threadDownloadPath.path! + "/" + tim + ext) {
                 self.gotNum++
                 self.downloadView?.appendTextAndScroll("File: \(tim + ext) already exists.\n")
                 return
@@ -114,7 +114,7 @@ class ChanDownloader: NSObject {
                 
                 self.downloadView?.appendTextAndScroll("GET: " + tim + ext + "\n")
                 
-                if (num == self.numPosts) {
+                if num == self.numPosts {
                     lastImage = true
                     self.getNum = 0
                 }
