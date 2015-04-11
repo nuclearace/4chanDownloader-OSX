@@ -26,29 +26,33 @@ class RateLimiter: NSObject {
     
     func removeTokens(#count:Double, callback:((err:String?, remainingTokens:Double?) -> Void)) {
         
-        if (count > self.bucket.sizeOfBucket) {
+        if count > self.bucket.sizeOfBucket {
             callback(err: "Requested more tokens than the bucket"
                 + " can contain", remainingTokens: nil)
             return
         }
         
         let now = NSDate().timeIntervalSince1970
-        if (now - self.intervalStart >= self.bucket.interval) {
+        
+        if now - self.intervalStart >= self.bucket.interval {
             self.intervalStart = now
             self.tokensThisInterval = 0
         }
         
-        if (count > (self.bucket.tokensPerInterval - self.tokensThisInterval)) {
-            if (self.firesImmediatly) {
+        if count > (self.bucket.tokensPerInterval - self.tokensThisInterval) {
+            if self.firesImmediatly {
                 return callback(err: nil, remainingTokens: -1)
             }
+            
             var waitInterval = dispatch_time_t(ceil(self.intervalStart + self.bucket.interval - now) * 1000000000)
+            
             dispatch_after(waitInterval, dispatch_get_main_queue()) {
                 func afterBucketRemove(err:String?, tokensRemaining:Double?) {
-                    if (err != nil) {
+                    if err != nil {
                         callback(err: err, remainingTokens: nil)
                         return
                     }
+                    
                     self.tokensThisInterval += count
                     callback(err: nil, remainingTokens: tokensRemaining)
                 }
@@ -59,10 +63,11 @@ class RateLimiter: NSObject {
         }
         
         func afterBucketRemove(err:String?, tokensRemaining:Double?) {
-            if (err != nil) {
+            if err != nil {
                 callback(err: err, remainingTokens: nil)
                 return
             }
+            
             self.tokensThisInterval += count
             callback(err: nil, remainingTokens: tokensRemaining)
         }

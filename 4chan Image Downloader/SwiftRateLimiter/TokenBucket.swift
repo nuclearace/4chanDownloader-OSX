@@ -43,7 +43,7 @@ class TokenBucket: NSObject {
     }
     
     func drip() {
-        if (self.tokensPerInterval == 0) {
+        if self.tokensPerInterval == 0 {
             self.contains = self.sizeOfBucket
         }
         
@@ -68,12 +68,12 @@ class TokenBucket: NSObject {
         }
         
         // Infinite bucket
-        if (self.sizeOfBucket == 0) {
+        if self.sizeOfBucket == 0 {
             callback(err: nil, remainingTokens: nil)
             return
         }
         
-        if (count > self.sizeOfBucket) {
+        if count > self.sizeOfBucket {
             callback(err: "Requested more tokens than the bucket"
                 + " can contain", remainingTokens: nil)
             return
@@ -81,7 +81,7 @@ class TokenBucket: NSObject {
         
         self.drip()
         
-        if (count > self.contains) {
+        if count > self.contains {
             return createDispatchLater()
         }
         
