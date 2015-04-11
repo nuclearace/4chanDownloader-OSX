@@ -2,11 +2,8 @@
 //  AppDelegate.swift
 //  4chan Image Downloader
 //
-//  Created by Erik Little on 11/15/14.
-//  Copyright (c) 2014 Erik Little. All rights reserved.
-//
 
-import Cocoa
+import AppKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

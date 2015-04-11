@@ -15,12 +15,13 @@ class RateLimiter: NSObject {
     var firesImmediatly = false
     
     init(tokensPerInterval:Double, interval:AnyObject, firesImmediatly:Bool = false) {
-        super.init()
         self.bucket = TokenBucket(sizeOfBucket: tokensPerInterval,
             tokensPerInterval: tokensPerInterval, interval: interval)
         self.bucket.contains = tokensPerInterval
-        
         self.firesImmediatly = firesImmediatly
+        
+        super.init()
+
     }
     
     func removeTokens(#count:Double, callback:((err:String?, remainingTokens:Double?) -> Void)) {

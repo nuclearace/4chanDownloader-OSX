@@ -16,7 +16,6 @@ class TokenBucket: NSObject {
     var lastDrip = NSDate().timeIntervalSince1970
     
     init(sizeOfBucket:Double, tokensPerInterval:Double!, interval:AnyObject) {
-        super.init()
         self.sizeOfBucket = sizeOfBucket
         self.tokensPerInterval = tokensPerInterval
         self.contains = sizeOfBucket
@@ -36,7 +35,11 @@ class TokenBucket: NSObject {
             }
         } else if let interval = interval as? Double {
             self.interval = interval
+        } else {
+            self.interval = 1
         }
+        
+        super.init()
     }
     
     func drip() {

@@ -2,11 +2,8 @@
 //  ViewController.swift
 //  4chan Image Downloader
 //
-//  Created by Erik Little on 11/15/14.
-//  Copyright (c) 2014 Erik Little. All rights reserved.
-//
 
-import Cocoa
+import AppKit
 
 class ThreadDownloaderController: NSViewController  {
     
@@ -41,7 +38,7 @@ class ThreadDownloaderController: NSViewController  {
         openPanel.allowsMultipleSelection = false
         let clicked = openPanel.runModal()
         
-        if (clicked == NSFileHandlingPanelOKButton) {
+        if clicked == NSFileHandlingPanelOKButton {
             self.downloader.changeDownloadFolder(openPanel.URL!)
         }
     }
@@ -50,7 +47,7 @@ class ThreadDownloaderController: NSViewController  {
         dispatch_async(dispatch_get_main_queue()) {[unowned self] in
             let string = NSAttributedString(string: text)
             self.downloadTextView.textStorage?.appendAttributedString(string)
-            self.downloadTextView.scrollRangeToVisible(NSMakeRange(countElements(self.downloadTextView.string!), 0))
+            self.downloadTextView.scrollRangeToVisible(NSMakeRange(count(self.downloadTextView.string!), 0))
         }
     }
 }
